@@ -1,5 +1,5 @@
 # Tensorflow Image Class<br>
- A repository for the transfer learning of existing image classification TF models, by Henry Zelenak<br>
+ A repository for the training of novel- and transfer training of existing- image classification TF models, by Henry Zelenak<br>
 
  -<br>
  Includes preprocessing and training directories for a subset of 6500 images from the CelebA dataset.<br>
@@ -29,16 +29,16 @@ This Academic and Research Use License Agreement ("Agreement") is a legal agreem
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except and only to the extent that such activity is expressly permitted by applicable law notwithstanding this limitation.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Use the Software for any commercial purpose, including but not limited to any for-profit research, development, or consulting.<br>
 	3. Ownership. The Software is owned by Licensor and is protected by United States copyright laws and international copyright treaties.
-	Licensor retains all ownership rights in the Software, including all intellectual property rights.
+	Licensor retains all ownership rights in the Software, including all intellectual property rights.<br>
 	4. Termination. This Agreement shall terminate automatically if Licensee breaches any of its terms and conditions. Upon termination, 
-	Licensee shall immediately cease using the Software and shall destroy all copies of the Software in its possession or control.
+	Licensee shall immediately cease using the Software and shall destroy all copies of the Software in its possession or control.<br>
 	5. Disclaimer of Warranties. THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT
 	LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. LICENSOR DOES NOT WARRANT THAT THE SOFTWARE 
-	WILL MEET LICENSEE'S REQUIREMENTS OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.
+	WILL MEET LICENSEE'S REQUIREMENTS OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE.<br>
 	6. Limitation of Liability. IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING 
 	OUT OF OR IN CONNECTION WITH THIS AGREEMENT OR THE USE OF THE SOFTWARE, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, LOSS 
 	OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.<br>
-	7. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the state of New York without <br>
+	7. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the state of New York without
 	giving effect to its conflicts of law principles.<br>
 	8. Entire Agreement. This Agreement constitutes the entire agreement between Licensee and Licensor and supersedes all prior negotiations,
 	understandings, and agreements between the parties with respect to the subject matter hereof. This Agreement may not be amended or modified
