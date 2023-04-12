@@ -40,38 +40,52 @@ for i in range(training_size):
   # add fileName to first column of labelsList
   labelsList[i, 0] = fileName
 
-  # define label vector of size 40
-  label_vector = np.zeros((len(class_names)), dtype=int)
-  label_counter = 0
+  # define a vector of type string and size 21
+  #label_vector = np.zeros(len(class_names), dtype='U20')
+  # define a list 'label_vector' of length 21 and type string
+  label_vector = [''] * 21
+
+  # define label_counter and vector_counter
+  label_counter = -1
+  vector_counter = -1
   
   # Loop over class flags, skipping the positions not in this list: [1, 3, 5, 8, 9, 11, 15, 17, 18, 19, 21, 22, 23, 29, 31, 32, 33, 34, 35, 36, 37]
   for j in range(0, 39):
     # switch statement to check if j is any value in used_classes
     if j in used_classes:
-      # Check if the current class flag is true
-      if annotations_file.iloc[i, j+1] == 1:
-        # add a true flag to label_vector
-        label_vector[label_counter] = 1
-        # Increment class placement counter
-        class_placement[i] += 1
-        print(f"Going to {class_names[label_counter]}")
-      else: 
-        # add a false flag to label_vector
-        label_vector[label_counter] = 0
       # increment label_counter
       label_counter += 1
+      # check if the current class flag is true
+      if annotations_file.iloc[i, j+1] == 1:
+        # increment vector_counter
+        vector_counter += 1
+        # add a class name to label_vector
+        label_vector[vector_counter] = class_names[label_counter]
+        # increment class placement counter
+        class_placement[i] += 1
+        # print(f"Going to {class_names[label_counter]}")
+      else: 
+       # do nothing
+        continue
     else:
       continue
-
+  # remove empty trailing entries from label_vector
+  label_vector = label_vector[0:vector_counter+1]
+  # remove single quotes around each entry in label_vector except the last entry
+  label_vector = '[%s]' % ', '.join(map(str, label_vector))
   # Add label_vector to labelsList in the second column
   labelsList[i, 1] = label_vector
 
-# create and define 'labels.csv' using pd
-  labels = pd.DataFrame(data=labelsList)
-  labels.to_csv('/content/drive/My Drive/CelebA/Anno/labels.csv', index=True)
   # Print progress message
   print(f"{fileName} added to {int(class_placement[i].sum())} classes")
   # print the current row and all columns of labelsList
-  print(labelsList[i, :])
+  print(label_vector)
+  print(type(label_vector))
 
+# create and define 'labels.csv' using pd
+labels = pd.DataFrame(data=labelsList)
+# set column names to 'filenames' and 'labels'
+labels.columns = ['filenames', 'labels']
+# save labels.csv to drive
+labels.to_csv('/content/drive/My Drive/CelebA/Anno/labels.csv', index=False)
 
