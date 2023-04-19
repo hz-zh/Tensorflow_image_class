@@ -74,3 +74,20 @@ history_frame.loc[:, [
                   ]].plot()
 plt.xlabel('Epochs')
 plt.ylabel('Training Loss')
+
+
+imagePreds = []
+
+print(predictions[20][14][0])
+for i in range(21):
+  classPreds = []
+  for j in range(15):
+    classPreds.append(predictions[i][j][0])
+  imagePreds.append(classPreds)
+
+for i in range(15):
+   # create a new list with the name 'image{i}'
+   exec(f'image{i} = []')
+   for j in range(21):
+      exec(f'image{i}.append(imagePreds[j][i])')
+   
